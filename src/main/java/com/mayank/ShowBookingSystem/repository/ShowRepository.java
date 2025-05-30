@@ -11,8 +11,8 @@ import java.util.Map;
 
 @Repository
 public class ShowRepository {
-    private final Map<String, LiveShow> shows = new HashMap<>();
-    private final Map<Genre, List<String>> genreMap = new HashMap<>();
+    private final Map<String, LiveShow> shows = new HashMap<>(); // map(showName, liveShow)
+    private final Map<Genre, List<String>> genreMap = new HashMap<>(); // map(genre, list of names of shows)
 
     public void addShow(String name, Genre genre){
         shows.put(name, new LiveShow(name, genre));

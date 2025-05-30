@@ -11,10 +11,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class BookingRepository {
-    private final Map<String, Booking> allBookings = new HashMap<>(); //
-    private final Map<String, List<Booking>> userBookings = new HashMap<>();
-    private final Map<String, Integer> bookingsCounter = new HashMap<>();
-    private final AtomicInteger idCounter = new AtomicInteger(1000);
+    private final Map<String, Booking> allBookings = new HashMap<>(); // map(bookingId, booking)
+    private final Map<String, List<Booking>> userBookings = new HashMap<>(); // map(userName, list of bookings)
+    private final Map<String, Integer> bookingsCounter = new HashMap<>(); // map(showName, total bookings), used to fetch trending show
+    private final AtomicInteger idCounter = new AtomicInteger(1000); // bookingId
 
     public String getTrendingShows() {
         return bookingsCounter.entrySet().stream()
